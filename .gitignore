@@ -1,0 +1,8 @@
+vendor/
+wp/
+wp-config.php
+content/*
+!content/index.php
+!content/themes/
+content/themes/*
+!content/themes/oprofile/

@@ -1,0 +1,27 @@
+.banner {
+
+  min-height: 70vh;
+  padding: 8em 2em 4em;
+
+  background-size: cover;
+  background-position: center;
+
+  position: relative;
+
+  z-index: 10;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(
+      to right,
+      $color-bg-alt,
+      transparentize($color-bg-alt, 1)
+    );
+    z-index: -1;
+  }
+}

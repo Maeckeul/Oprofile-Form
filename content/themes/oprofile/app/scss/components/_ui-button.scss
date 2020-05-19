@@ -1,0 +1,10 @@
+.ui-button {
+  font-size: 1.2em;
+
+  &.close-menu {
+
+    position: absolute;
+    top: 16px;
+    right: 18px;
+  }
+}

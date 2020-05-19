@@ -1,0 +1,28 @@
+.header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+
+  z-index: 20;
+
+  &--is-fixed {
+    position: fixed;
+    background-image: linear-gradient(
+      to right,
+      $color-brand,
+      $color-brand-alt
+    );
+  }
+
+  @media (min-width: $breakpoint-extra-large) {
+
+    width: $breakpoint-extra-large;
+    margin: auto;
+  }
+}

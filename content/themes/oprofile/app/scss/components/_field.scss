@@ -1,0 +1,45 @@
+.field {
+  width: 100%;
+
+  @media (min-width: $breakpoint-medium) {
+
+    &--is-half {
+      width: 47.5%;
+    }
+  }
+
+  &__label {
+    display: block;
+    font-weight: bold;
+    margin-top: 1em;
+  }
+
+  &__input,
+  &__textarea {
+    width: 100%;
+
+    background-color: lighten($color-bg-footer, 10%);
+    border: none;
+
+    color: $color-text;
+    padding: 0.5em;
+    font-weight: bold;
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+
+  &__textarea {
+    height: 10em;
+    resize: none;
+  }
+
+  &__submit {
+    padding: 0.8em;
+    font-weight: bold;
+    border: none;
+    background-color: $color-bg;
+  }
+}

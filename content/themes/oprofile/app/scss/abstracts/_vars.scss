@@ -1,0 +1,51 @@
+// J'écrase la variable par défaut de fontawesome
+// avec ma valeur liée à ma config
+$fa-font-path: '/webfonts';
+
+/* Couleurs du site */
+$white: #FFF;
+$black: #000;
+$lightblue: #6FB4FD;
+$lightpurple: #8D82C4;
+$darkblue: #242943;
+$red: #EC8D81;
+$orange: #E7B788;
+$blue: #8EA9E8;
+$green: #87C5A4;
+
+/* Assignation des couleurs à mes variables */
+$color-text: $white;
+$color-text-alt: $black;
+$color-brand: $lightblue;
+$color-brand-alt: $lightpurple;
+$color-bg: $white;
+$color-bg-alt: $black;
+$color-bg-footer: $darkblue;
+
+$color-bg-post: (
+    1: lighten($lightblue, 10%),
+    2: $lightpurple,
+    3: $red,
+    4: $orange,
+    5: $blue,
+    6: $green,
+);
+
+/* Font */
+$font-size: 16px;
+$font-size-medium: 18px;
+$font-size-large: 20px;
+
+$font-familly-title: 'Roboto Slab', serif;
+$font-familly-content: 'PT Sans', sans-serif;
+$font-familly-fallback: 'Helvetica, Arial, sans-serif';
+
+/* Breakpoint */
+$breakpoint-medium: 500px;
+$breakpoint-large: 800px;
+$breakpoint-extra-large: 1200px;
+
+/* Duration */
+$duration-slow: 0.9s;
+$duration-medium: 0.5s;
+$duration-fast: 0.3s;

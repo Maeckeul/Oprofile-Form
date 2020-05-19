@@ -1,0 +1,11 @@
+.social-nav {
+  display: flex;
+
+  &__item {
+    padding-right: 1em;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}

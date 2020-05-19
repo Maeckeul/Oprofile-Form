@@ -1,0 +1,29 @@
+.contact-info {
+
+  @media (min-width: $breakpoint-large) {
+    border-left: 1px solid lighten($color-bg-footer, 25%);
+  }
+
+  &__part {
+    border-bottom: 1px solid lighten($color-bg-footer, 25%);
+    position: relative;
+    padding-left: 4em;
+    padding-bottom: 0.8em;
+    margin-bottom: 2em;
+
+    &__icon {
+      color: lighten($color-bg-footer, 50%);
+      position: absolute;
+      left: 2em;
+    }
+
+    &__title {
+      font-weight: bold;
+      margin-bottom: 1em;
+    }
+
+    &:last-child {
+      border: none;
+    }
+  }
+}

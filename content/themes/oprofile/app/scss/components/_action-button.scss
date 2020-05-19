@@ -1,0 +1,35 @@
+.action-button {
+  color: $color-brand;
+  font-weight: bold;
+  border: 3px solid $color-brand;
+  text-transform: uppercase;
+  padding: 0.5em;
+
+  transition: color $duration-slow,
+              border $duration-fast,
+              padding $duration-medium;
+
+  &::after {
+    content: '\f30b';
+    font-family: 'Font Awesome\ 5 Free';
+    padding-left: 1em;
+
+    transition: transform $duration-slow;
+  }
+
+  &:hover {
+    color: $color-brand-alt;
+    // border-color: $color-brand-alt;
+
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to left, rgba(111,155,205,1) 25%, rgba(128,108,247,1) 89%, rgba(148,98,247,1) 100%, rgba(207,154,216,1) 100%);
+
+
+    padding-right: 4em;
+
+    &::after {
+      display: inline-block;
+      transform: scaleX(4);
+    }
+  }
+}
