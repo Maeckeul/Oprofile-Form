@@ -9,6 +9,8 @@ function oprofile_setup()
 
   // demande à WP d'activer les thumbnails
   add_theme_support('post-thumbnails');
+
+  add_theme_support('menus');
 }
 
 add_action('after_setup_theme', 'oprofile_setup');
