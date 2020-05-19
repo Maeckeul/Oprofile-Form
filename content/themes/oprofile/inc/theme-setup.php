@@ -11,6 +11,11 @@ function oprofile_setup()
   add_theme_support('post-thumbnails');
 
   add_theme_support('menus');
+
+  register_nav_menus([
+    'social' => 'Navigation reseaux sociaux dans le header',
+    'main' => 'Menu de navigation du site'
+  ]);
 }
 
 add_action('after_setup_theme', 'oprofile_setup');

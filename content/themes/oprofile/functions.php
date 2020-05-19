@@ -8,5 +8,7 @@ require 'inc/theme-setup.php';
 
 require 'inc/nav-menu.php';
 
+require 'inc/cleanup.php';
+
 
 
