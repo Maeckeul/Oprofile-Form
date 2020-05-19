@@ -9,6 +9,11 @@ function oprofile_scripts()
     '1.0.0'
   );
 
+  wp_enqueue_style(
+    'fontawesome',
+    'https://use.fontawesome.com/releases/v5.13.0/css/all.css'
+  );
+
   wp_enqueue_script(
     'app',
     get_theme_file_uri('public/js/app.js'),

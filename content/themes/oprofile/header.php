@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
 
   <?php wp_head(); ?>
 </head>
@@ -13,13 +12,25 @@
       <div class="logo">
         <a href="<?= home_url(); ?>" class="logo__text"><?php bloginfo('name'); ?></a>
       </div>
-      <ul class="social-nav">
+
+      <?php
+
+          // Va me chercher le menu associé à l'emplacement...
+          // (en l'occurence l'emplacement "main")
+          wp_nav_menu([
+            'theme_location' => 'social',
+          ]);
+
+    ?>
+
+<!--      <ul class="social-nav">
         <li class="social-nav__item"><a href=""><i class="fab fa-twitter"></i></a></li>
         <li class="social-nav__item"><a href=""><i class="fab fa-facebook-f"></i></a></li>
         <li class="social-nav__item"><a href=""><i class="fab fa-google-plus-g"></i></a></li>
         <li class="social-nav__item"><a href=""><i class="fab fa-instagram"></i></a></li>
         <li class="social-nav__item"><a href=""><i class="fab fa-github"></i></a></li>
-      </ul>
+      </ul> -->
+
       <a href="" class="ui-button open-menu">
         <i class="navbar__social__nav--color fas fa-bars"></i>
       </a>
