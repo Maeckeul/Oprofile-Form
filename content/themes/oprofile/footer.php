@@ -1,5 +1,5 @@
 <footer class="footer">
-      <form action="" class="contact-form">
+<!--      <form action="" class="contact-form">
         <div class="field field--is-half">
           <label class="field__label" for="username">Nom</label>
           <input type="text" class="field__input" id="username">
@@ -18,7 +18,10 @@
         <div class="field">
           <input type="submit" value="Envoyer" class="field__submit">
         </div>
-      </form>
+      </form> 
+-->
+
+<?= do_shortcode('[contact-form-7 id="32" title="Contact Footer"]'); ?>
 
       <address class="contact-info">
         <div class="contact-info__part">

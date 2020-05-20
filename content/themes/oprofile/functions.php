@@ -10,5 +10,9 @@ require 'inc/nav-menu.php';
 
 require 'inc/cleanup.php';
 
+require 'inc/shortcode.php';
+
+require 'inc/customizer.php';
+
 
 
