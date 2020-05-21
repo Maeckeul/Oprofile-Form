@@ -66,6 +66,46 @@ function oprofile_customizer($wp_customize)
 
   $wp_customize->add_section(
     // Identifiant unique de la section
+    'oprofile_home',
+    [
+      'title' => "Page d'accueil",
+      'description' => "oProfile Section - Gestion de la page d'accueil",
+      // Identifiant du panel dans lequel placer cette section
+      'panel' => 'oprofile_theme_panel'
+    ]  
+  );
+
+  // Troisième étape: ajouter un setting & son control
+
+  // 1 - Créer le setting
+  // https://developer.wordpress.org/reference/classes/wp_customize_manager/add_setting/
+  $wp_customize->add_setting(
+    'oprofile_select_pages',
+    [
+      'default' => ''
+    ]
+  );
+
+  // 2 - Ajouter son control
+  // https://developer.wordpress.org/reference/classes/wp_customize_manager/add_control/
+  // https://codex.wordpress.org/Class_Reference/WP_Customize_Manager/add_control
+  $wp_customize->add_control(
+    'oprofile_select_pages',
+    [
+      // Le type d'input
+      'type' => 'dropdown-pages',
+  
+      // La section sur laquel est greffée mon setting
+      'section' => 'oprofile_home',
+      // Le label affiché
+      'label' => "Selection de pages pour l'accueil",
+      // Description
+      'description' => "Selectionner une page qui viendra entre les articles et la grille de compétences"
+    ]
+  );
+
+  $wp_customize->add_section(
+    // Identifiant unique de la section
     'oprofile_footer',
     [
       'title' => "Footer",
