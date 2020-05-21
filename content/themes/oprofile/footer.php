@@ -1,7 +1,5 @@
 <?php
 
-
-
 if(get_theme_mod('oprofile_footer_display') === 'Non'): 
 
 ?>
@@ -93,7 +91,11 @@ if(get_theme_mod('oprofile_footer_address')) {
       </address>
     </footer>
 
-<?php endif; ?>
+<?php 
+
+endif; 
+
+?>
 
 
   </div>

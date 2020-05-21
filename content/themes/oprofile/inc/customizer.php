@@ -225,6 +225,54 @@ function oprofile_customizer($wp_customize)
     ]
   );
 
+  $wp_customize->add_setting(
+    'oprofile_footer_color_picker',
+    [
+      'default' => '#242943',
+      'transport' => 'refresh',
+    ]
+  );
+
+  $wp_customize->add_section(
+    // Identifiant unique de la section
+    'oprofile_footer',
+    [
+      'title' => "Footer",
+      'description' => "oProfile Section - Gestion du footer",
+      // Identifiant du panel dans lequel placer cette section
+      'panel' => 'oprofile_theme_panel'
+    ]  
+  );
+
+  $wp_customize->add_control(
+    new WP_Customize_Color_Control( $wp_customize, 'oprofile_footer_color_control',
+    [
+      // Le type d'input
+      
+
+      // La section sur laquel est greffée mon setting
+      'section' => 'oprofile_footer',
+      // Le label affiché
+      'label' => "Choix de la couleur du footer",
+      // Description
+      'description' => "Couleur",
+      'settings' => 'oprofile_footer_color_picker',
+    ]
+  ));
+
+
 }
 
 add_action('customize_register', 'oprofile_customizer');
+
+function customize_css() { ?>
+  <style type="text/css">
+
+    .footer {
+      background-color: <?= get_theme_mod('oprofile_footer_color_picker') ?> ;
+    }
+
+  </style>
+<?php }
+
+add_action('wp_head', 'customize_css');
