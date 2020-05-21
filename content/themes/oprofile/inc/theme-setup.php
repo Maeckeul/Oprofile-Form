@@ -13,7 +13,6 @@ function oprofile_setup()
   add_theme_support('menus');
 
   register_nav_menus([
-    'social' => 'Navigation reseaux sociaux dans le header',
     'main' => 'Menu de navigation du site'
   ]);
 }

@@ -100,9 +100,131 @@ function oprofile_customizer($wp_customize)
       // Le label affiché
       'label' => "Email",
       // Description
-      'description' => "Email"
+      'description' => "Adresse email située au pied de page"
     ]
   );
+
+  $wp_customize->add_section(
+    // Identifiant unique de la section
+    'oprofile_footer',
+    [
+      'title' => "Footer",
+      'description' => "oProfile Section - Gestion du footer",
+      // Identifiant du panel dans lequel placer cette section
+      'panel' => 'oprofile_theme_panel'
+    ]  
+  );
+
+  // Troisième étape: ajouter un setting & son control
+
+  // 1 - Créer le setting
+  // https://developer.wordpress.org/reference/classes/wp_customize_manager/add_setting/
+  $wp_customize->add_setting(
+    'oprofile_footer_phone',
+    [
+      'default' => '+33 6 25 99 11 91'
+    ]
+  );
+
+  // 2 - Ajouter son control
+  // https://developer.wordpress.org/reference/classes/wp_customize_manager/add_control/
+  // https://codex.wordpress.org/Class_Reference/WP_Customize_Manager/add_control
+  $wp_customize->add_control(
+    'oprofile_footer_phone',
+    [
+      // Le type d'input
+      'type' => 'text',
+
+      // La section sur laquel est greffée mon setting
+      'section' => 'oprofile_footer',
+      // Le label affiché
+      'label' => "Téléphone",
+      // Description
+      'description' => "Numéro de téléphone situé au pied de page"
+    ]
+  );
+
+  $wp_customize->add_section(
+    // Identifiant unique de la section
+    'oprofile_footer',
+    [
+      'title' => "Footer",
+      'description' => "oProfile Section - Gestion du footer",
+      // Identifiant du panel dans lequel placer cette section
+      'panel' => 'oprofile_theme_panel'
+    ]  
+  );
+
+  // Troisième étape: ajouter un setting & son control
+
+  // 1 - Créer le setting
+  // https://developer.wordpress.org/reference/classes/wp_customize_manager/add_setting/
+  $wp_customize->add_setting(
+    'oprofile_footer_address',
+    [
+      'default' => '42 Lotissement Nouvelle Cité, Lamberton 97215 Rivère Salée'
+    ]
+  );
+
+  // 2 - Ajouter son control
+  // https://developer.wordpress.org/reference/classes/wp_customize_manager/add_control/
+  // https://codex.wordpress.org/Class_Reference/WP_Customize_Manager/add_control
+  $wp_customize->add_control(
+    'oprofile_footer_address',
+    [
+      // Le type d'input
+      'type' => 'textarea',
+
+      // La section sur laquel est greffée mon setting
+      'section' => 'oprofile_footer',
+      // Le label affiché
+      'label' => "Adresse",
+      // Description
+      'description' => "Adresse géographique située en pied de page"
+    ]
+  );
+
+  $wp_customize->add_section(
+    // Identifiant unique de la section
+    'oprofile_footer',
+    [
+      'title' => "Footer",
+      'description' => "oProfile Section - Gestion du footer",
+      // Identifiant du panel dans lequel placer cette section
+      'panel' => 'oprofile_theme_panel'
+    ]  
+  );
+
+  // Troisième étape: ajouter un setting & son control
+
+  // 1 - Créer le setting
+  // https://developer.wordpress.org/reference/classes/wp_customize_manager/add_setting/
+  $wp_customize->add_setting(
+    'oprofile_footer_display',
+    [
+      'default' => 'Non'
+    ]
+  );
+
+  // 2 - Ajouter son control
+  // https://developer.wordpress.org/reference/classes/wp_customize_manager/add_control/
+  // https://codex.wordpress.org/Class_Reference/WP_Customize_Manager/add_control
+  $wp_customize->add_control(
+    'oprofile_footer_display',
+    [
+      // Le type d'input
+      'type' => 'select',
+
+      // La section sur laquel est greffée mon setting
+      'section' => 'oprofile_footer',
+      // Le label affiché
+      'label' => "Affichage du footer",
+      // Description
+      'description' => "Desactiver le footer ?",
+      'choices' => ['Non' => 'Non', 'Oui' => 'Oui']
+    ]
+  );
+
 }
 
 add_action('customize_register', 'oprofile_customizer');

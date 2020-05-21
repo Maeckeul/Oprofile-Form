@@ -1,3 +1,12 @@
+<?php
+
+
+
+if(get_theme_mod('oprofile_footer_display') === 'Non'): 
+
+?>
+
+
 <footer class="footer">
 <!--      <form action="" class="contact-form">
         <div class="field field--is-half">
@@ -23,26 +32,70 @@
 
 <?= do_shortcode('[contact-form-7 id="32" title="Contact Footer"]'); ?>
 
+<?php
+
+$email = 'cmaeckeul@gmail.com';
+
+if(get_theme_mod('oprofile_footer_email')) {
+
+  $email = get_theme_mod('oprofile_footer_email');
+
+}
+
+?>
+
       <address class="contact-info">
         <div class="contact-info__part">
           <i class="contact-info__part__icon fas fa-envelope"></i>
           <h4 class="contact-info__part__title">Email</h4>
-          <a class="contact-info__part__content" href="mailto:christophe@oclock.io&subject=Demande%20de%20contact&body=Nom%3A%0A%0APr%C3%A9nom%3A%0A%0AAdresse%20du%20site%20%28si%20d%C3%A9j%C3%A0%20existant%29%3A">christophe@oclock.io</a>
+          <a class="contact-info__part__content" href="mailto:<?= $email ?>&subject=Demande%20de%20contact&body=Nom%3A%0A%0APr%C3%A9nom%3A%0A%0AAdresse%20du%20site%20%28si%20d%C3%A9j%C3%A0%20existant%29%3A"><?= $email ?></a>
         </div>
+
+<?php
+
+$phone = '+33 6 25 99 11 91';
+
+if(get_theme_mod('oprofile_footer_phone')) {
+
+  $phone = get_theme_mod('oprofile_footer_phone');
+
+}
+
+$phone = str_replace(' ', '', $phone);
+$phone = str_replace('.', '', $phone);
+$phone = str_replace('/', '', $phone);
+
+?>
 
         <div class="contact-info__part">
           <i class="contact-info__part__icon fas fa-phone-alt"></i>
           <h4 class="contact-info__part__title">Téléphone</h4>
-          <a class="contact-info__part__content" href="tel:+33679708933">+33 6 79 70 89 33</a>
+          <a class="contact-info__part__content" href="tel:<?= $phone ?>"><?= get_theme_mod('oprofile_footer_phone') ?></a>
         </div>
+
+<?php
+
+$address = '42 Lotissement Nouvelle Cité, Lamberton 97215 Rivère Salée';
+
+if(get_theme_mod('oprofile_footer_address')) {
+
+  $phone = get_theme_mod('oprofile_footer_address');
+
+}
+
+?>
 
         <div class="contact-info__part">
           <i class="contact-info__part__icon fas fa-home"></i>
           <h4 class="contact-info__part__title">Adresse</h4>
-          <a class="contact-info__part__content" href="https://bit.ly/2ZhXUBR" target="_blank">10 Michel Hubert Descours<br />27300 Bernay</a>
+          <a class="contact-info__part__content" href="https://bit.ly/2ZhXUBR" target="_blank"><?= nl2br(get_theme_mod('oprofile_footer_address')) ?></a>
         </div>
       </address>
     </footer>
+
+<?php endif; ?>
+
+
   </div>
 
   <div class="menu">
