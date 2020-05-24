@@ -10,59 +10,29 @@ get_template_part('template-parts/front-page/banner');
 get_template_part('template-parts/front-page/posts');
 
 // Get pages set in the customizer (if any)
-$pages = [];
-for ( $count = 1; $count <= 5; $count++ ) {
-	$mod = get_theme_mod( 'oprofile_select_pages' . $count );
-	if ( 'page-none-selected' != $mod ) {
-		$pages[] = $mod;
-	}
-}
+$home_insert = get_theme_mod('oprofile_select_pages');
 
-$args = array(
-	'posts_per_page' => 5,
-	'post_type' => 'page',
-	'post__in' => $pages,
-	'orderby' => 'post__in'
-);
+if(!empty($home_insert)):
 
-$query = new WP_Query( $args );
+	$args =[
+		'page_id' => $home_insert
+	];
 
-if ( $query->have_posts() ) :
-	$count = 1;
-	while ( $query->have_posts() ) : $query->the_post();
-?>
+$wp_query = new WP_Query($args);
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class( 'featured-' . $count ); ?>>
+if ($wp_query->have_posts()): while($wp_query->have_posts()): $wp_query->the_post(); ?>
 
-			<header class="entry-header">
-				<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
-			</header><!-- .entry-header -->
+<section style="background-color: grey">
+<h3><?= the_title(); ?></h3>
+<p><?= the_excerpt(); ?></p>
+</section>
 
-			<div class="entry-summary clearfix">
-				<?php the_excerpt(); ?>
-			</div><!-- .entry-content -->
-		
+<?php endwhile; wp_reset_postdata(); endif; 
 
-		</article><!-- #post-## -->
-
-	<?php
-	$count++;
-	endwhile;
-else :
-	if ( current_user_can( 'customize' ) ) { ?>
-		<div class="message">
-			<p><?php _e( 'There are no pages available to display.', 'textdomain' ); ?></p>
-			<p><?php printf(
-				__( 'These pages can be set in the <a href="%s">customizer</a>.', 'textdomain' ),
-				admin_url( 'customize.php?autofocus[control]=showcase' )
-			); ?>
-			</p>
-		</div>
-	<?php }
 endif;
 
 // J'affiche la grille des compétences
 get_template_part('template-parts/front-page/grid');
 
 // J'affiche le footer
-get_footer();
+ get_footer(); 

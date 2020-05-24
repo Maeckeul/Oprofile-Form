@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1a3c3e468d60b7f4fb5daeeda522094d",
+    "content-hash": "4a0f69cfef20ba59c8a6607001198e82",
     "packages": [
         {
             "name": "composer/installers",
@@ -296,6 +296,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/contact-form-7/"
+        },
+        {
+            "name": "wpackagist-plugin/easy-google-fonts",
+            "version": "1.4.4",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/easy-google-fonts/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/easy-google-fonts.zip?timestamp=1564916315"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/easy-google-fonts/"
         },
         {
             "name": "wpackagist-plugin/hello-dolly",

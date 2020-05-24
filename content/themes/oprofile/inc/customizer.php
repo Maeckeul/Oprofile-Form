@@ -299,8 +299,6 @@ function oprofile_customizer($wp_customize)
       'settings' => 'oprofile_footer_color_picker',
     ]
   ));
-
-
 }
 
 add_action('customize_register', 'oprofile_customizer');
